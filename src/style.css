@@ -1,0 +1,16 @@
+#dropArea {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#uploadedImage {
+    display: block;
+    margin: auto;
+    image-orientation: from-image;
+}
+
+.hello {
+    color: red;
+}
