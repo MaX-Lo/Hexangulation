@@ -1,16 +1,17 @@
-#dropArea {
-    width: 350px;
-    height: 70px;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
-#uploadedImage {
-    display: block;
-    margin: auto;
-    image-orientation: from-image;
+#optionsContainer {
+    margin-top: 25px;
 }
 
-.hello {
-    color: red;
+#sizeCaption, #description {
+    text-align: left;
+}
+
+#transformedImage {
+    max-width: 80%;
+    height: auto;
 }

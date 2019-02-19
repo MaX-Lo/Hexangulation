@@ -2,19 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hexangulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <title>Quadrilation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.0/dist/css/bulma-extensions.min.css">
+    <script> var exports = {}; </script>
+    <script src="typescript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@5.0.3/dist/js/bulma-calendar.min.js"></script>
 </head>
 <body>
-<header><h1>Hexangulation</h1></header>
-<div id="description">
-    Drag and drop an image onto this site to see it converted to many little hexagons
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">
+            Hexangulation
+        </h1>
+        <p class="subtitle">
+            Drag and drop an image from your file manager anywhere on this site to see it converted to many little hexagons
+        </p>
+        <p id="description">Keep in mind that especially for large images the transformation can take a while. That's mainly due to
+        performing all calculations on client-side in Javascript. (~15sec for a 4608x2176px image I used)</p>
+    </div>
+    <div class="container" id="optionsContainer">
+        <div class="columns">
+            <div class="column">
+                <div class="notification">
+                    <p id="sizeCaption">Hexagon Size</p>
+                    <input id="sliderWithValue" class="slider has-output is-fullwidth is-success" min="10" max="100" value="50" step="10" type="range">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section">
+    <progress class="progress is-success" id="progressBar" value="0" max="100"></progress>
 </div>
 
-<img id="uploadedImage" src="../res/img/up-arrow.png" draggable="false">
+<section class="section has-background-grey-lighter">
+        <img id="transformedImage" src="../res/img/arrow_up.png" alt="transformed image">
+</section>
 </body>
 </html>
